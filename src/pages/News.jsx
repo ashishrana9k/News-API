@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { fetchAPI1 } from '../APIs/APIS';
+import { fetchAPI3 } from '../APIs/APIS';
 
 export default function News() {
     const [data, setData] = useState([]);
@@ -7,7 +7,7 @@ export default function News() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetchAPI1()
+        fetchAPI3()
             .then((res) => {
                 setData(res || []);
                 setError([])
