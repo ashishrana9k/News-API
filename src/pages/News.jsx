@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { fetchAPI1 } from '../APIs/APIS';
 
-export default function news3() {
+export default function News() {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -10,26 +10,29 @@ export default function news3() {
         fetchAPI1()
             .then((res) => {
                 setData(res || []);
+                setError([])
             })
             .catch((err) => {
                 console.log('Something went wrong!', err);
-                setError('We are sorry to make you wait....!');
-                setData([]);
             })
             .finally(() => {
                 setLoading(false);
+                setError('We are extrimly sorry to make you wait....! We are working on it');
             });
     }, []);
 
     return (
+
         <>
             {loading && (
-                <div className='text-center font-semibold text-2xl'><i>loading...</i></div>
+                <div className='text-center font-semibold text-2xl'>
+                    <i>loading...</i>
+                </div>
             )}
 
             {!loading && error && (
-                <div className="text-center text-red-500 font-semibold text-xl">
-                    {error}
+                <div className="text-center text-red-500 text-2xl mt-8">
+                    <i> {error}</i>
                 </div>
             )}
 
@@ -63,5 +66,6 @@ export default function news3() {
                 ))
             }
         </>
+
     );
 }
