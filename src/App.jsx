@@ -1,10 +1,10 @@
 import React from 'react'
 import './App.css'
-import { Navbar } from './APIs/Navbar'
-import { Home } from './pages/Home'
-import { Sports } from './pages/Sports'
-import { News } from './pages/News'
-import { Business } from './pages/Business'
+import Navbar from './APIs/Navbar'
+import Home from './pages/Home'
+import News from './pages/News'
+import Business from './pages/Business'
+import Update from './pages/Update'
 
 import { BrowserRouter, Routes, Route, } from 'react-router-dom';
 function App() {
@@ -15,7 +15,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/news' element={<News />} />
-          <Route path='/Sports' element={<Sports />} />
+          <Route path='/Update' element={<Update />} />
           <Route path='/Business' element={<Business />} />
         </Routes>
       </BrowserRouter>

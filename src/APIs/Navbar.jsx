@@ -1,9 +1,7 @@
 import React from 'react'
-
 import { Link } from 'react-router-dom';
-
-
 export default function Navbar() {
+    
     return (
         <div>
             <div>
@@ -14,7 +12,7 @@ export default function Navbar() {
                     <ul className='main_list flex gap-5 font-semibold text-lg py-2'>
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/news'>News</Link></li>
-                        <li><Link to='/Sports'>Sports</Link></li>
+                        <li><Link to='/Update'>Sports</Link></li>
                         <li><Link to='/Business'>Business</Link></li>
                         <li>Invocation</li>
                         <li>Culture</li>
