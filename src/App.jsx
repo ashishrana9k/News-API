@@ -1,13 +1,12 @@
 import React from 'react'
 import './App.css'
 import Navbar from './APIs/Navbar'
-import Home from './pages/Home'
-import Sports from './pages/Sports'
+import Home from './pages/home'
+import Sports from './pages/sports'
 import News from './pages/News'
 import Business from './pages/Business'
 
 import { BrowserRouter, Routes, Route, } from 'react-router-dom';
-
 function App() {
   return (
     <>
@@ -15,9 +14,9 @@ function App() {
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/news3' element={<News />} />
+          <Route path='/news' element={<News />} />
           <Route path='/sports' element={<Sports />} />
-          <Route path='/Business' element={<Business />} />
+          <Route path='/business' element={<Business />} />
         </Routes>
       </BrowserRouter>
     </>

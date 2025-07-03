@@ -13,9 +13,9 @@ export default function Navbar() {
                 <div className='flex justify-center'>
                     <ul className='main_list flex gap-5 font-semibold text-lg py-2'>
                         <li><Link to='/'>Home</Link></li>
-                        <li><Link to='/news3'>News</Link></li>
-                        <li><Link to='/Sports'>Sports</Link></li>
-                        <li><Link to='/Business'>Business</Link></li>
+                        <li><Link to='/news'>News</Link></li>
+                        <li><Link to='/sports'>Sports</Link></li>
+                        <li><Link to='/business'>Business</Link></li>
                         <li>Invocation</li>
                         <li>Culture</li>
                         <li>Art</li>
