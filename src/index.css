@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+.main_list>li:hover {
+    color: red;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.container{
+    max-width: 1478px;
+    width: 100%;
+    margin: 0 auto;
+}
