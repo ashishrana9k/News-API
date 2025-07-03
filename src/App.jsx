@@ -1,10 +1,10 @@
 import React from 'react'
 import './App.css'
-import Navbar from './APIs/Navbar'
-import Home from './pages/Home'
-import Sports from './pages/Sports'
-import News from './pages/News'
-import Business from './pages/Business'
+import { Navbar } from './APIs/Navbar'
+import { Home } from './pages/Home'
+import { Sports } from './pages/Sports'
+import { News } from './pages/News'
+import { Business } from './pages/Business'
 
 import { BrowserRouter, Routes, Route, } from 'react-router-dom';
 function App() {
