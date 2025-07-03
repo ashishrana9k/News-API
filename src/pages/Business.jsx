@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { fetchAPI1 } from '../APIs/APIS';
 
-export default function Business() {
+export default function () {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
