@@ -1,8 +1,8 @@
 import React from 'react'
 import './App.css'
 import Navbar from './APIs/Navbar'
-import Home from './pages/home'
-import Sports from './pages/sports'
+import Home from './pages/Home'
+import Sports from './pages/Sports'
 import News from './pages/News'
 import Business from './pages/Business'
 
