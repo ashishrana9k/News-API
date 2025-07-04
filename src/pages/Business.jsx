@@ -10,14 +10,15 @@ export default function Home() {
         fetchAPI1()
             .then((res) => {
                 setData(res || []);
-                setError([])
+                console.log(res);
+                setError(null);
             })
             .catch((err) => {
                 console.log('Something went wrong!', err);
+                setError('We are extremely sorry for the wait.... We are working on it');
             })
             .finally(() => {
                 setLoading(false);
-                setError('We are extrimly sorry to make you wait....! We are working on it');
             });
     }, []);
 
@@ -36,35 +37,40 @@ export default function Home() {
             )}
 
             {!loading && !error && data.length > 0 &&
-                data.map((items, index) => (
-                    <div
-                        key={index}
-                        className="border-b-2 border-gray-200 p-4 border gap-5 rounded-2xl hover:border-red-400 hover:shadow-2xl mt-4"
-                    >
-                        <div className="col-span-1">
-                            <img
-                                src={items.urlToImage}
-                                className="w-full rounded h-[400px] object-cover"
-                                alt=""
-                            />
-                        </div>
-                        <div className="col-span-2 space-y-4">
-                            <p className="text-xl text-[#36454F] my-4"><i>{items.author}</i></p>
-                            <p className="text-4xl text-[#36454F]">{items.title}</p>
-                            <p>{items.description}</p>
-                            <p>{items.content}</p>
-                            <div className="text-right">
-                                <p className="text-sm text-[#36454F]"><i>{items.author}</i></p>
-                                <p className="text-sm text-[#36454F]"><i>{items.publishedAt}</i></p>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-4 container'>{
+                    data.map((items, index) => (
+                        // LOGIC CHANGE HERE: Conditionally apply flex-row or flex-row-reverse
+                        <div
+                            key={index}
+                            className={`border-b-2 border-gray-200 p-4 border rounded-2xl hover:border-red-400 hover:shadow-2xl mt-4  ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
+                                }`}
+                        >
+                            {/* Image Container: Takes up 1/3 of the width */}
+                            <div className="">
+                                <img
+                                    src={items.urlToImage}
+                                    className="w-full rounded h-[400px] object-cover"
+                                    alt=""
+                                />
                             </div>
-                            <button className="cursor-pointer px-5 py-1 border rounded hover:border-red-400 hover:text-red-400">
-                                <a href={items.url} target="_blank" rel="noopener noreferrer">Learn more</a>
-                            </button>
+                            {/* Content Container: Takes up 2/3 of the width */}
+                            <div className=" space-y-4">
+                                <p className="text-xl text-[#36454F] my-4"><i>{items.author}</i></p>
+                                <p className="text-4xl text-[#36454F]">{items.title}</p>
+                                <p>{items.description}</p>
+                                <p>{items.content}</p>
+                                <div className="text-right">
+                                    <p className="text-sm text-[#36454F]"><i>{items.author}</i></p>
+                                    <p className="text-sm text-[#36454F]"><i>{items.publishedAt}</i></p>
+                                </div>
+                                <button className="cursor-pointer px-5 py-1 border rounded hover:border-red-400 hover:text-red-400">
+                                    <a href={items.url} target="_blank" rel="noopener noreferrer">Learn more</a>
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                ))
+                    ))
+                } </div>
             }
         </>
-
     );
 }
