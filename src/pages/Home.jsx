@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { fetchAPI2 } from '../APIs/APIS';
+import { fetchAPI2 } from '../APIs/APIS.jsx';
 
 export default function Home() {
     const [data, setData] = useState([]);
